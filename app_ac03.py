@@ -20,15 +20,16 @@ class Cadastro(db.Model):
     cep = db.Column(db.String(10), nullable=True)
     complemento = db.Column(db.String(20), nullable=True)
 
-    def __init__(self, ra, nome_do_aluno, email_do_aluno, logradouro, numero, cep, complemento):
+    def __init__(self, ra, nome_do_aluno, email_do_aluno, logradouro, numero, bairro, estado, complemento,cep):
         self.ra = ra
         self.nome_do_aluno = nome_do_aluno
         self.email_do_aluno = email_do_aluno
         self.logradouro = logradouro
         self.numero = numero
         self.bairro = bairro
-        self.cep = cep
+        self.estado = estado
         self.complemento = complemento
+        self.cep = cep
 
 @app_ac03.route("/")
 @app_ac03.route("/index")
@@ -39,7 +40,15 @@ def index():
 @app_ac03.route("/add", methods=['GET','POST'])
 def add():
     if request.method == 'POST':
-        aluno = Cadastro(request.form['ra'], request.form['nome'], request.form['email'], request.form['logradouro'], request.form['numero'] , request.form['bairro']  , request.form['cep'], request.form['complemento'])
+        aluno = Cadastro(request.form['ra'], 
+        request.form['nome'], 
+        request.form['email'], 
+        request.form['logradouro'], 
+        request.form['numero'], 
+        request.form['bairro']  , 
+        request.form['estado'], 
+        request.form['complemento'],
+        request.form['cep'])
         db.session.add(aluno)
         db.session.commit()
         return redirect(url_for('index'))
@@ -55,8 +64,9 @@ def edit(id):
         aluno.logradouro = request.form['logradouro']
         aluno.numero = request.form['numero']
         aluno.bairro = request.form['bairro']
-        aluno.cep = request.form['cep']
+        aluno.cep = request.form['estado']
         aluno.complemento = request.form['complemento']
+        aluno.cep = request.form['cep']
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('edit.html', aluno=aluno)
