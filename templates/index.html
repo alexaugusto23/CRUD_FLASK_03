@@ -27,13 +27,14 @@
                 </tr>
             </thead>
             <tbody>
-                {% for c in resposta %}
+                {% for c in cadastro %}
                 <tr style="border-radius: 10px;" style="border-color: darkslategray;">
                     <td>{{c.ra}}</td>
                     <td>{{c.nome_do_aluno}}</td>
                     <td>{{c.email_do_aluno}}</td>
                     <td>{{c.logradouro}}</td>
                     <td>{{c.numero}}</td>
+                    <td>{{c.bairro}}</td>
                     <td>{{c.cep}}</td>
                     <td>{{c.complemento}}</td>
                     <td>
