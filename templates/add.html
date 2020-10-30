@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="/static/img/cadastro.png" />
+        <title>Adicionar o Aluno</title>
+    </head>
+
+    <body>
+        <h1>Cadastrar o Aluno</h1>
+        <form action="/add" class="container" method="POST">
+            <input type="text" name="ra" id="ra" placeholder="Digite seu RA"/>
+            <br>
+            <input type="text" name="nome" id="nome" placeholder="Digite o seu nome"/>
+            <br>
+            <input type="text" name="email" id="email" placeholder="Digite o seu email"/>
+            <br>
+            <input type="text" name="logradouro" id="logradouro" placeholder="Qual o logradouro"/>
+            <br>
+            <input type="text" name="numero" id="numero" placeholder="Qual o numero"/>
+            <br>
+            <input type="text" name="cep" id="cep" placeholder="Digite o seu cep"/>
+            <br>
+            <input type="text" name="complemento" id="complemento" placeholder="Digite o complemento"/>
+            <br>
+            <br>
+            <input type="submit" value="Enviar"/>
+            <br>
+        </form>
+        <br>
+        <a href="/index"><input type="submit" value = "Voltar"></a>
+    </body>
+
+    <br>
+    <footer>
+        <p class="rodape">Desenvolvido por MAAPSYSTEM</p>
+    </footer>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="/static/img/cadastro.png" />
+        <title>Cadastro de Alunos</title>
+
+    </head>
+
+    <body>
+        <h1>Tabela de Alunos</h1>
+        <br>
+        <a href="/add">Adicionar Aluno</a>
+        <br>
+        <br> 
+        <table style="text-align:center" style="border: black;" width="100%"> 
+            <thead>
+                <tr>
+                    <th>Ra</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Logradouro</th>
+                    <th>Numero</th>
+                    <th>Cep</th>
+                    <th>Complemento</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in resposta %}
+                <tr style="border-radius: 10px;" style="border-color: darkslategray;">
+                    <td>{{c.ra}}</td>
+                    <td>{{c.nome_do_aluno}}</td>
+                    <td>{{c.email_do_aluno}}</td>
+                    <td>{{c.logradouro}}</td>
+                    <td>{{c.numero}}</td>
+                    <td>{{c.cep}}</td>
+                    <td>{{c.complemento}}</td>
+                    <td>
+                        <a href="/edit/{{c.ra}}">Editar</a>
+                        <a href="/delete/{{c.ra}}">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+
+    <br>
+    <footer style="color: darkgreen;">
+        <p class="rodape">Desenvolvido por MAAPSYSTEM</p>
+    </footer>
+</html>

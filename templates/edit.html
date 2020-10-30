@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="/static/img/cadastro.png" />
+        <title>Editar o Aluno</title>
+    </head>
+
+    <body>
+        <h1>Editar o Aluno {{aluno.ra}}</h1>
+        <br>
+        <form action="/edit/{{aluno.ra}}" method="POST">
+            <input type="text" name="ra" id="ra" value="{{aluno.ra}}"/>
+            <br>
+            <input type="text" name="nome" id="nome" value="{{aluno.nome_do_aluno}}"/>
+            <br>
+            <input type="text" name="email" id="email" value="{{aluno.email_do_aluno}}"/>
+            <br>
+            <input type="text" name="logradouro" id="logradouro" value="{{aluno.logradouro}}"/>
+            <br >
+            <input type="text" name="numero" id="numero" value="{{aluno.numero}}"/>
+            <br>
+            <input type="text" name="cep" id="cep" value="{{aluno.cep}}">
+            <br>
+            <input type="text" name="complemento" id="complemento" value="{{aluno.complemento}}"/>
+            <br>
+            <br>
+            <input type="submit" value="Enviar"/>
+        </form>
+        <br>
+        <a href="/index"><input type="submit" value = "Voltar"></a> 
+    </body>
+
+    <br>
+    <footer>
+        <p class="rodape">Desenvolvido por MAAPSYSTEM</p>
+    </footer>
+</html>
