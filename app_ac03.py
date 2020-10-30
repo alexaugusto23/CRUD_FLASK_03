@@ -9,12 +9,14 @@ app_ac03.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://dbimpacta:impacta#202
 db = SQLAlchemy(app_ac03)
 
 
-class MaapSystem(db.Model):
-    ra = db.Column(db.Integer, primary_key = True)
+class Cadastro(db.Model):
+    __tablename__ = "tbAlunos_alexsandro_RA_1901705"
+    ra = db.Column(db.Integer, primary_key = True, unique=True)
     nome_do_aluno = db.Column(db.String(50), nullable=True)
     email_do_aluno = db.Column(db.String(50), nullable=True)
     logradouro = db.Column(db.String(50), nullable=True)
     numero = db.Column(db.String(5), nullable=True)
+    bairro = db.Column(db.String(10), nullable=True)
     cep = db.Column(db.String(10), nullable=True)
     complemento = db.Column(db.String(20), nullable=True)
 
@@ -24,19 +26,20 @@ class MaapSystem(db.Model):
         self.email_do_aluno = email_do_aluno
         self.logradouro = logradouro
         self.numero = numero
+        self.bairro = bairro
         self.cep = cep
         self.complemento = complemento
 
 @app_ac03.route("/")
 @app_ac03.route("/index")
 def index():
-    resposta = MaapSystem.query.all()
-    return render_template("index.html", resposta=resposta)
+    cadastro = Cadastro.query.all()
+    return render_template("index.html", cadastro=cadastro)
 
 @app_ac03.route("/add", methods=['GET','POST'])
 def add():
     if request.method == 'POST':
-        aluno = MaapSystem(request.form['ra'], request.form['nome'], request.form['email'], request.form['logradouro'], request.form['numero'] , request.form['cep'], request.form['complemento'])
+        aluno = Cadastro(request.form['ra'], request.form['nome'], request.form['email'], request.form['logradouro'], request.form['numero'] , request.form['bairro']  , request.form['cep'], request.form['complemento'])
         db.session.add(aluno)
         db.session.commit()
         return redirect(url_for('index'))
@@ -44,13 +47,14 @@ def add():
 
 @app_ac03.route("/edit/<int:id>", methods=['GET','POST'])
 def edit(id):
-    aluno = MaapSystem.query.get(id)
+    aluno = Cadastro.query.get(id)
     if request.method == 'POST':
         aluno.ra = request.form['ra']
         aluno.nome_do_aluno = request.form['nome']
         aluno.email_do_aluno = request.form['email']
         aluno.logradouro = request.form['logradouro']
         aluno.numero = request.form['numero']
+        aluno.bairro = request.form['bairro']
         aluno.cep = request.form['cep']
         aluno.complemento = request.form['complemento']
         db.session.commit()
@@ -59,7 +63,7 @@ def edit(id):
 
 @app_ac03.route("/delete/<int:id>")
 def delete(id):
-    aluno = MaapSystem.query.get(id)
+    aluno = Cadastro.query.get(id)
     db.session.delete(aluno)
     db.session.commit()
     return redirect(url_for('index'))
