@@ -1,6 +1,6 @@
 # CRUD_FLASK_CADASTRO_ALUNOS
 
-##Criação do projeto de cadastro de alunos.
+## Criação do projeto de cadastro de alunos.
 
 Foi utilizado as bibliotécas:
 
@@ -11,7 +11,15 @@ Foi utilizado as bibliotécas:
 * Jinja2==2.11.2
 * requests==2.24.0
 
-Desenvolvido por Alexsandro Augusto Ignácio
+Técnologias:
+
+* Python
+* Flask
+* HTML
+* Bootstrap
+* CSS
+
+**Desenvolvido por Alexsandro Augusto Ignácio**
 
 
 
