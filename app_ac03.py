@@ -16,9 +16,10 @@ class Cadastro(db.Model):
     email_do_aluno = db.Column(db.String(50), nullable=True)
     logradouro = db.Column(db.String(50), nullable=True)
     numero = db.Column(db.String(5), nullable=True)
-    bairro = db.Column(db.String(10), nullable=True)
+    bairro = db.Column(db.String(25), nullable=True)
+    estado = db.Column(db.String(20), nullable=True)
+    complemento = db.Column(db.String(25), nullable=True)
     cep = db.Column(db.String(10), nullable=True)
-    complemento = db.Column(db.String(20), nullable=True)
 
     def __init__(self, ra, nome_do_aluno, email_do_aluno, logradouro, numero, bairro, estado, complemento,cep):
         self.ra = ra
@@ -64,7 +65,7 @@ def edit(id):
         aluno.logradouro = request.form['logradouro']
         aluno.numero = request.form['numero']
         aluno.bairro = request.form['bairro']
-        aluno.cep = request.form['estado']
+        aluno.estado = request.form['estado']
         aluno.complemento = request.form['complemento']
         aluno.cep = request.form['cep']
         db.session.commit()
@@ -79,10 +80,15 @@ def delete(id):
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    db.create_all()
+    #db.create_all()
+    #db.drop_all()
     app_ac03.run(debug=True)
 
 '''
 select * from maap_system
 delete from maap_system
+
+from app_ac03 import db
+db.create_all()
+db.drop_all() 
 '''

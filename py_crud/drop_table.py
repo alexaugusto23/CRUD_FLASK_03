@@ -10,7 +10,7 @@ def deletar_registros():
         )
 
         cursor = connection.cursor()
-        destruir = "DROP TABLE Alex_teste"
+        destruir = "DROP TABLE .tbAlunos_alexsandro_RA_1901705"
         cursor.execute(destruir)
         connection.commit()
         cursor.close()
