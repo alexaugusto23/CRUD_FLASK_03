@@ -2,7 +2,7 @@
 
 ## Criação do projeto de cadastro de alunos.
 
-Foi utilizado as bibliotécas:
+**Foi utilizado as bibliotécas:**
 
 * Flask==1.0.3
 * Flask-SQLAlchemy==2.4.4
@@ -11,7 +11,7 @@ Foi utilizado as bibliotécas:
 * Jinja2==2.11.2
 * requests==2.24.0
 
-Técnologias:
+**Técnologias:**
 
 * Python
 * Flask
