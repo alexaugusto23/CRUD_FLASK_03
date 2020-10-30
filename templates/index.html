@@ -1,20 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="/static/img/cadastro.png" />
+        <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
         <title>Cadastro de Alunos</title>
-
     </head>
 
     <body>
-        <h1>Tabela de Alunos</h1>
+    
+        <h1 class="alert alert-success" align= "center">Tabela de Alunos</h1>
         <br>
-        <a href="/add">Adicionar Aluno</a>
+        <a href="/add"><img style="margin-left: 100;" src="{{url_for('static', filename='img/adicionar.png')}}" alt="adicionar"></a>
         <br>
         <br> 
-        <table style="text-align:center" style="border: black;" width="100%"> 
-            <thead>
+        <table class="table table-striped">
+            <thead align="center">
                 <tr>
                     <th>Ra</th>
                     <th>Nome</th>
@@ -25,11 +27,12 @@
                     <th>Estado</th>
                     <th>Complemento</th>
                     <th>Cep</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody align="center">
                 {% for c in cadastro %}
-                <tr style="border-radius: 10px;" style="border-color: darkslategray;">
+                <tr>
                     <td>{{c.ra}}</td>
                     <td>{{c.nome_do_aluno}}</td>
                     <td>{{c.email_do_aluno}}</td>
@@ -40,17 +43,20 @@
                     <td>{{c.complemento}}</td>
                     <td>{{c.cep}}</td>
                     <td>
-                        <a href="/edit/{{c.ra}}">Editar</a>
-                        <a href="/delete/{{c.ra}}">Excluir</a>
+                        <a href="/edit/{{c.ra}}"> <img src="{{url_for('static', filename='img/editar.png')}}"
+                                alt="editar"> </a>
+                        <a href="/delete/{{c.ra}}"> <img src="{{url_for('static', filename='img/excluir.png')}}"
+                                alt="excluir"> </a>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </body>
-
+    <script>href="{{url_for('static', filename='js/bootstrap.min.js')}}"
+    </script>
     <br>
-    <footer style="color: darkgreen;">
-        <p class="rodape">Desenvolvido por MAAPSYSTEM</p>
+    <footer>
+        <p><strong>Desenvolvido por Alexsandro Augusto Ignácio</strong></p>
     </footer>
 </html>
