@@ -1,1 +1,1 @@
-web : gunicorn flask_app_ac03:app
+web: python app_ac03.py

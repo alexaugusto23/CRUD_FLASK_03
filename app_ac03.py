@@ -92,8 +92,12 @@ delete from maap_system
 
 from app_ac03 import db
 db.create_all()
-db.drop_all() 
+db.drop_all()
+
 http://localhost:5000/
+python -m venv crud_env
+crud_env\Scripts\ activate
+pip freeze > requirements.txt
 heroku
 pip install pipenv
 pipenv install requests
