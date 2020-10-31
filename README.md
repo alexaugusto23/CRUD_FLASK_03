@@ -2,6 +2,8 @@
 
 ## Criação do projeto de cadastro de alunos.
 
+**Deploy: https://crud-cadastro-alunos.herokuapp.com/**
+
 **Foi utilizado as bibliotécas:**
 
 * Flask==1.0.3
@@ -18,6 +20,7 @@
 * HTML
 * Bootstrap
 * CSS
+* Heroku
 
 **Desenvolvido por Alexsandro Augusto Ignácio**
 
