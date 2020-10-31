@@ -98,4 +98,8 @@ heroku
 pip install pipenv
 pipenv install requests
 pipenv check
+heroku login
+cltr c devolve o prompt
+heroku create
+git push heroku master
 '''
