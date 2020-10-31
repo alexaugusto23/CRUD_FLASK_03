@@ -102,4 +102,10 @@ heroku login
 cltr c devolve o prompt
 heroku create
 git push heroku master
+git push heroku HEAD:master
+heroku ps:scale web=1
+heroku open
+heroku apps
+heroku apps:destroy "nome do app sem aspas"
+heroku apps:destroy arcene-40228
 '''
