@@ -97,6 +97,7 @@ http://localhost:5000/
 heroku
 pip install pipenv
 pipenv install requests
+pipenv install "dependency"
 pipenv check
 heroku login
 cltr c devolve o prompt
@@ -108,4 +109,10 @@ heroku open
 heroku apps
 heroku apps:destroy "nome do app sem aspas"
 heroku apps:destroy arcene-40228
+heroku buildpacks:clear
+heroku buildpacks:add --index heroku/python
+heroku logs --tail
+heroku logs  > herokulogs
+heroku apps:rename NEWNAME
+heroku apps:rename crud-cadastro-alunos --app boiling-tundra-56022 
 '''
