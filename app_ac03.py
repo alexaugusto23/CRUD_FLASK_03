@@ -82,7 +82,7 @@ def delete(id):
 if __name__ == '__main__':
     #db.create_all()
     #db.drop_all()
-    app_ac03.run(debug=True)
+    app_ac03.run(debug=True, host='0.0.0.0')
 
 '''
 select * from maap_system
@@ -91,4 +91,5 @@ delete from maap_system
 from app_ac03 import db
 db.create_all()
 db.drop_all() 
+http://localhost:5000/
 '''
