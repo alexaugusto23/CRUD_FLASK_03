@@ -95,13 +95,22 @@ db.create_all()
 db.drop_all()
 
 http://localhost:5000/
-python -m venv crud_env
-crud_env\Scripts\ activate
-pip freeze > requirements.txt
-heroku
+
+py -m venv venv_xxx       #maquina virtual
+venv_xxx\Script\activate  #ativando maquina virtual
+pip install Flask       
+pip install pip ou py -m pip install --upgrade pip
+pip install Flask-SQLAlchemy
+
 pip install pipenv
 pipenv install requests
 pipenv install "dependency"
+
+python -m venv crud_env
+crud_env\Scripts\ activate
+pip freeze > requirements.txt
+
+heroku
 pipenv check
 heroku login
 cltr c devolve o prompt
@@ -119,4 +128,6 @@ heroku logs --tail
 heroku logs  > herokulogs
 heroku apps:rename NEWNAME
 heroku apps:rename crud-cadastro-alunos --app boiling-tundra-56022 
+
+
 '''
