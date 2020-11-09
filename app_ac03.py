@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, render_template , redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-import requests
 import json
 import os
 
@@ -97,7 +96,7 @@ db.drop_all()
 http://localhost:5000/
 
 py -m venv venv_xxx       #maquina virtual
-venv_xxx\Script\activate  #ativando maquina virtual
+venv_xxx\Scripts\ activate  #ativando maquina virtual
 pip install Flask       
 pip install pip ou py -m pip install --upgrade pip
 pip install Flask-SQLAlchemy
@@ -108,6 +107,7 @@ pipenv install "dependency"
 
 python -m venv crud_env
 crud_env\Scripts\ activate
+
 pip freeze > requirements.txt
 
 heroku
